@@ -24,8 +24,10 @@ var commentRoutes    = require('./routes/comments'),
 var bluebird = require('bluebird');
 mongoose.Promise = bluebird; // mongoose recommends bluebird as a promise library for MongoDB
  
+//mongodb://localhost/yelp_camp_v12
+
 // connect to the database
-mongoose.connect(`mongodb://localhost/yelp_camp_v12`, {
+mongoose.connect(`mongodb://ante:susica@ds133054.mlab.com:33054/yelp_camp`, {
     promiseLibrary: require('bluebird'), // mongoose docs recommend this go here too
     useMongoClient: true // add useMongoClient:true to fix the "open() =>v4.11.0" deprecation warning
 })
