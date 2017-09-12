@@ -18,6 +18,8 @@ var commentRoutes    = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
     indexRoutes      = require('./routes/index');
 
+var port = process.env.PORT || 8080;
+
 // CONNECT to mongoose
 // replace the deprecated mongoose.Promise library
 // this will need installing in a terminal with "npm install bluebird --save"
@@ -91,6 +93,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(3000, function() {
+app.listen(port, function() {
 	console.log("Server started...");
 });
